@@ -1,12 +1,18 @@
 {
+  "homepage": "https://CamAnNguyen.github.io/react-graphql-github-user-search",
   "private": true,
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "preexport": "yarn build",
+    "export": "next export",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
