@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+import { RawIntlProvider } from "react-intl";
+
+import { makeIntl, messages } from "i18n";
+import { AppLoader } from "components/AppLoader";
+import { getLanguage } from "store/ui/selectors";
+import { AppRouter } from "routes/AppRouter";
+
+import './App.scss';
 
 function App() {
+  const language = useSelector(getLanguage);
+  const intl = makeIntl(language, messages);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RawIntlProvider value={intl}>
+      <AppRouter />
+      <AppLoader />
+    </RawIntlProvider>
   );
 }
 
