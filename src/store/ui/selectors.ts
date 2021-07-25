@@ -7,9 +7,5 @@ export function getUI(state: State) {
   return state.ui;
 }
 
-export const getLanguage = createSelector(
-  getUI,
-  (ui: UIState) => ui.language
-);
-
+export const getLanguage = createSelector(getUI, (ui: UIState) => ui.language);
 export const isLoading = createSelector(getUI, (ui: UIState) => ui.loading);

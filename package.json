@@ -29,6 +29,8 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
+    "i18n": "ts-node-script ./scripts/i18n-extract-messages.ts --ignore \"src/react-app-env.d.ts\" --languages en --default en --output src/i18n/languages/ \"src/**/*.{ts,tsx}\"",
+    "i18n-check": "yarn i18n --check",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
@@ -51,11 +53,19 @@
     ]
   },
   "devDependencies": {
+    "@formatjs/cli": "^1.10.6",
     "@types/history": "^4.7.9",
+    "@types/node-fetch": "^2.5.12",
     "@types/react-router-dom": "^5.1.8",
+    "@types/sha1": "^1.1.3",
+    "@types/shelljs": "^0.8.9",
     "autoprefixer": "^9",
     "gh-pages": "^3.2.3",
+    "node-fetch": "^2.6.1",
     "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "sha1": "^1.1.1",
+    "shelljs": "^0.8.4",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "ts-node": "^10.1.0"
   }
 }
