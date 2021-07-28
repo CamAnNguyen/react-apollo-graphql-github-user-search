@@ -14,8 +14,8 @@ function App() {
 
   return (
     <RawIntlProvider value={intl}>
-      <AppRouter />
       <AppLoader />
+      <AppRouter />
     </RawIntlProvider>
   );
 }

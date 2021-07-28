@@ -1,6 +1,7 @@
-import { AppActionTypes } from "./actions";
+import { UIActionTypes } from "./actions";
 import { UIActions } from "./types";
-import { Language } from "../../i18n";
+
+import { Language } from "i18n";
 
 export const uiInitialState = {
   language: (localStorage.getItem("language") || "en") as Language,
@@ -11,7 +12,7 @@ export type UIState = typeof uiInitialState;
 
 export function uiReducer(
   state: UIState = uiInitialState,
-  action: AppActionTypes
+  action: UIActionTypes
 ): UIState {
   switch (action.type) {
     case UIActions.SET_LOADING:

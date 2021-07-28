@@ -8,3 +8,9 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+export enum ResourceState {
+  LOADING = "loading",
+  NOT_FOUND = "not found",
+  FOUND = "found",
+}

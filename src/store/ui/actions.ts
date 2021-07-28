@@ -14,7 +14,7 @@ export interface SetLanguage extends Action {
   payload: Language;
 }
 
-export type AppActionTypes = SetLoading | SetLanguage;
+export type UIActionTypes = SetLoading | SetLanguage;
 
 export function setLoading(payload: boolean): SetLoading {
   return { type: UIActions.SET_LOADING, payload };
