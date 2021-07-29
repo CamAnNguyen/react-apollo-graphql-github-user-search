@@ -7,13 +7,13 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import { PageButton } from "./Buttons";
 import { SortIcon, SortUpIcon, SortDownIcon } from "./Icons";
 
-interface AvatarCellProps {
+interface CellProps {
   readonly value: string;
   readonly column: any;
   readonly row: any;
 };
 
-export const AvatarCell = ({ value, column, row }: AvatarCellProps) => (
+export const AvatarCell = ({ value, column, row }: CellProps) => (
   <div className="flex items-center">
     <div className="flex-shrink-0 h-10 w-10">
       <img
@@ -26,6 +26,47 @@ export const AvatarCell = ({ value, column, row }: AvatarCellProps) => (
       <div className="text-sm font-medium text-gray-900">{value}</div>
       <div className="text-sm text-gray-500">
         {row.original[column.usernameAccessor]}
+      </div>
+    </div>
+  </div>
+);
+
+export const InformationCell = ({ value, column, row }: CellProps) => (
+  <div className="flex items-center">
+    <div>
+      <div className="text-sm font-medium text-gray-900">
+        {value}
+      </div>
+      <div className="text-sm text-gray-500 break-words">
+        {row.original[column.bioAccessor]}
+      </div>
+      <div className="text-sm">
+        <span className="text-gray-500 font-medium">
+          Blog:
+        </span>
+        <span className="text-gray-500 ml-0.5">
+          {row.original[column.blogAccessor]}
+        </span>
+      </div>
+      <div className="text-sm">
+        <span className="text-gray-500 font-medium">
+          Followers:
+        </span>
+        <span className="text-gray-500 ml-0.5">
+          {row.original[column.followersAccessor]}
+        </span>
+        <span className="text-gray-500 font-medium ml-0.5">
+          - Following:
+        </span>
+        <span className="text-gray-500 ml-0.5">
+          {row.original[column.followingAccessor]}
+        </span>
+        <span className="text-gray-500 font-medium ml-0.5">
+          - Public Repositories:
+        </span>
+        <span className="text-gray-500 ml-0.5">
+          {row.original[column.pubReposAccessor]}
+        </span>
       </div>
     </div>
   </div>
@@ -92,7 +133,7 @@ const Table = ({
     <>
       <div className="mt-4 flex flex-col">
         <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
-          <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+          <div className="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
             <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
               <table {...getTableProps()} className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
@@ -132,7 +173,7 @@ const Table = ({
                         {row.cells.map(cell => (
                           <td
                             {...cell.getCellProps()}
-                            className="px-6 py-4 whitespace-nowrap"
+                            className="px-6 py-4"
                             role="cell"
                           >
                             <div className="text-sm text-gray-500">

@@ -7,7 +7,7 @@ import { SearchIcon } from "@heroicons/react/solid";
 import { fetchUsers, setPage } from "store/users/actions";
 import { getUsers } from "store/users/selectors";
 
-import Table, { AvatarCell } from './components/Table';
+import Table, { AvatarCell, InformationCell } from './components/Table';
 
 const Home = () => {
   const textInput  = useRef() as React.MutableRefObject<HTMLInputElement>;
@@ -41,6 +41,20 @@ const Home = () => {
       Cell: AvatarCell,
       imgAccessor: "avatar_url",
       usernameAccessor: "login",
+    },
+    {
+      Header: formatMessage({
+        id: "home/info-header",
+        defaultMessage: "Information",
+      }),
+      Cell: InformationCell,
+      accessor: 'location',
+      bioAccessor: 'bio',
+      blogAccessor: 'blog',
+      companyAccessor: 'company',
+      followersAccessor: 'followers',
+      followingAccessor: 'following',
+      pubReposAccessor: 'public_repos',
     },
   ], [formatMessage]);
 

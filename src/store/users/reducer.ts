@@ -43,6 +43,19 @@ export function usersReducer(
         data: query === state.query ? state.data.concat(items) : items,
         currentPage: page
       };
+    case UserActions.FETCH_USERS_INFO_SUCCESS:
+      return {
+        ...state,
+        data: state.data.map(user => {
+          const info = action.payload.filter(d => d.login === user.login)[0];
+          if (!info) return user;
+
+          return {
+            ...user,
+            ...info
+          }
+        }),
+      };
     case UserActions.FETCH_USERS_ERROR:
       return usersInitialState;
     case UserActions.SET_PAGE:
