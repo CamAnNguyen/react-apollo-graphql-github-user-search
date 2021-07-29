@@ -1,5 +1,4 @@
 {
-  "homepage": "https://CamAnNguyen.github.io/react-github-user-search",
   "name": "react-github-user-search",
   "version": "0.1.0",
   "private": true,
@@ -35,9 +34,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "i18n": "ts-node-script ./scripts/i18n-extract-messages.ts --ignore \"src/react-app-env.d.ts\" --languages en --default en --output src/i18n/languages/ \"src/**/*.{ts,tsx}\"",
-    "i18n-check": "yarn i18n --check",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "i18n-check": "yarn i18n --check"
   },
   "eslintConfig": {
     "extends": [
@@ -72,7 +69,6 @@
     "@typescript-eslint/parser": "^4.28.4",
     "autoprefixer": "^9",
     "eslint": "^7.31.0",
-    "gh-pages": "^3.2.3",
     "global": "^4.4.0",
     "node-fetch": "^2.6.1",
     "postcss": "^7",
