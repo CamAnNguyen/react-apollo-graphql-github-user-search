@@ -1,38 +1,38 @@
 [
   {
-    "id": "home/filter",
-    "defaultMessage": "Filter"
-  },
-  {
     "id": "home/header",
     "defaultMessage": "GitHub User Search"
   },
   {
-    "id": "home/items-per-page",
-    "defaultMessage": "Items Per Page"
-  },
-  {
-    "id": "home/next",
-    "defaultMessage": "Next"
-  },
-  {
-    "id": "home/previous",
-    "defaultMessage": "Previous"
+    "id": "home/info-header",
+    "defaultMessage": "Information"
   },
   {
     "id": "home/search-placeholder",
     "defaultMessage": "Search user name"
   },
   {
-    "id": "home/show",
-    "defaultMessage": "Show"
-  },
-  {
-    "id": "home/title-header",
-    "defaultMessage": "Title"
-  },
-  {
     "id": "home/user-name-header",
     "defaultMessage": "User Name"
+  },
+  {
+    "id": "loader/loading",
+    "defaultMessage": "Loading ..."
+  },
+  {
+    "id": "loader/loading-message",
+    "defaultMessage": "This may take a few seconds, please don't close this page."
+  },
+  {
+    "id": "table/of",
+    "defaultMessage": "of"
+  },
+  {
+    "id": "table/records",
+    "defaultMessage": "records"
+  },
+  {
+    "id": "table/showing",
+    "defaultMessage": "Showing"
   }
 ]
